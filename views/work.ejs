@@ -1,0 +1,44 @@
+<%- include("partials/header.ejs") %>
+
+<main>
+<h1>Work!!!</h1>
+<div class="midle">
+    <div class="container">
+      <div class="row">
+        <%if (locals.toDoListW) {%>
+          <% for( let index=0; index < toDoListW.length; index++ ) { %>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <div class="form-group ">
+                    <input type="checkbox" name="packersOff" id="packers" value="1" />
+                    <label for="packers" class="strikethrough">
+                      <%=toDoListW[index].taskText%>
+                    </label>
+                    <p class="footer-date">
+                      <%=toDoListW[index].date%>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% } %>
+              <%}else {%>
+                <p>No items to display</p>
+                <% } %>
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <form action="/work" method="POST">
+                          <div class="form-group">
+                          <textarea class="form-control" name="taskW" rows="3"></textarea>
+                          <button type="submit" class="btn btn-light">Ok</button>
+                          <div class="form-group"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+<%- include("partials/footer.ejs") %>

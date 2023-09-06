@@ -1,0 +1,47 @@
+<%- include("partials/header.ejs") %>
+
+  <main>
+    <h1><%=locals.title?title:"Today"%></h1>
+    <div class="midle">
+      <div class="container">
+        <div class="row">
+          <%if (locals.toDoListD) {%>
+            <% for( let index=0; index < toDoListD.length; index++ ) { %>
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="form-group ">
+                      <form action="/delete" method="POST">
+                      <input type="checkbox" name="checkbox" value="<%= toDoListD[index]._id %>" onChange="this.form.submit()" />
+                      <label>
+                        <%=toDoListD[index].taskText%>
+                      </label>
+                      <p class="footer-date">
+                        <%=toDoListD[index].date.toLocaleDateString()%>
+                      </p>
+                      <input type="hidden" name="listName" value="<%=locals.title?title:"Today"%>"></input>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+                <%}else {%>
+                  <p>No items to display</p>
+                  <% } %>
+                    <div class="col">
+                      <div class="card">
+                        <div class="card-body">
+                          <form action="/" method="POST">
+                            <div class="form-group">
+                              <textarea class="form-control" name="taskD" rows="3"></textarea>
+                              <button type="submit" class="btn btn-light" name="list"value="<%=locals.title?title:"Today" %>">Ok</button>
+                              <div class="form-group"></div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+        </div>
+      </div>
+    </div>
+    <%- include("partials/footer.ejs") %>

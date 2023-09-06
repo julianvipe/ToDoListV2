@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap");
+
+
+body{
+    background:#000000 ;
+    background-image: radial-gradient(ellipse at top, #000000, transparent),
+            radial-gradient(ellipse at bottom, #360480, transparent),
+            radial-gradient(ellipse at center, #0215e3, transparent);
+            
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: aliceblue;
+}
+
+h1
+{
+    text-align: center;
+    margin-top: 2rem;
+}
+.midle
+{
+     padding: 2rem;
+}
+.card
+{
+    width: 14rem;
+    height: 14rem;
+    margin: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.card-body{
+    text-align: left;
+    overflow: visible;
+    overflow-wrap: anywhere;    
+}
+.footer-date
+{
+    position: absolute;
+    left: 60%;
+    bottom: 0;
+}
+
+button
+{
+    margin-top: 1rem;
+    opacity: 80%;
+}
+textarea{
+    opacity: 60%;
+}
+
+footer
+{
+    text-align: center;
+    position:static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
